@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <%= admin.username %> (Admin)</h1>
+    <h2>Your Details:</h2>
+    <p>Email: <%= admin.email %></p>
+
+    <h2>All Admins:</h2>
+    <ul>
+        <% allAdmins.forEach(admins => { %>
+            <li><%= admins.username %> (<%= admins.email %>)</li>
+        <% }) %>
+    </ul>
+
+    <!-- Logout Button -->
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
